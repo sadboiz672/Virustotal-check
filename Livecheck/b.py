@@ -3,7 +3,7 @@ import hashlib
 import requests
 import time
 # Cài đặt thông tin kết nối đến VirusTotal API
-api_key = '4e8eec375ab5e1c9ebe0622d9c10030bd6f2fa73cd993e3fc54e3fbc6117bb53'
+api_key = '######################'
 url = 'https://www.virustotal.com/vtapi/v2/file/report'
 
 # Đường dẫn tới thư mục chứa các tệp tin 
@@ -12,7 +12,7 @@ dir_path = './'
 # Hash các tệp tin và lưu vào dictionary
 hash_dict = {}
 for filename in os.listdir(dir_path):
-    if filename.endswith('.exe'):  # thay đổi tùy biến theo mục đích
+    if filename.endswith('###########################'):  # thay đổi tùy biến theo mục đích
         filepath = os.path.join(dir_path, filename)
         with open(filepath, 'rb') as f:
             filehash = hashlib.md5(f.read()).hexdigest()
