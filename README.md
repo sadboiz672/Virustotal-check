@@ -7,3 +7,4 @@ Các yêu cầu cơ bản:
     - Key của người dùng thường cho 4 request/min, cho nên giới hạn time.sleep()
     - Key pro thả phanh để sử dụng.
 2. Để chạy được file cần phải có Python3, cài đặt phiên bản và module phù hợp
+3. Các thông tin được thu thập từ Kape.
