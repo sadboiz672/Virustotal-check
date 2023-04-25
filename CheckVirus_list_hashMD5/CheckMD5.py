@@ -3,7 +3,7 @@ import requests
 import re
 import time
 
-api_key = '4e8eec375ab5e1c9ebe0622d9c10030bd6f2fa73cd993e3fc54e3fbc6117bb53'
+api_key = '######################'
 url = 'https://www.virustotal.com/vtapi/v2/file/report'
 
 cout_malware=0
