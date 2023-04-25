@@ -4,15 +4,20 @@ import time
 
 # Đọc file CSV và lấy dữ liệu từ cột chứa hash
 hashes = []
-with open('a.csv') as csv_file:
+cout_malware=0
+count_nope=0
+count_safe=0
+with open('a.csv') as csv_file: #Thay tên file tùy biến
     csv_reader = csv.reader(csv_file)
-    # Bỏ qua hàng tiêu đề (nếu có)
+    # Bỏ qua hàng đầu tiêu đề (nếu có)
     next(csv_reader)
     for row in csv_reader:
-        hashes.append(row[4])
+    	value = row[4].strip()
+    	if value:
+    		hashes.append(value)
 
 # Khai báo API key của VirusTotal
-api_key = 'API_key'
+api_key = '########'
 
 # Gửi yêu cầu đến VirusTotal để kiểm tra hash
 for hash in hashes:
@@ -26,14 +31,20 @@ for hash in hashes:
         positives = json_response['positives']
         total = json_response['total']
         if positives > 0:
-            print(f'{hash} has {positives}/{total} positive detections on VirusTotal')
+            print(f'{hash} phát hiện độc hại {positives}/{total}')
+            cout_malware +=1
+            print('Chi tiết cảnh báo: \n')
             for scanner, result in json_response['scans'].items():
                 if result['detected']:
                     print(f"\t{scanner}: {result['result']}")
         else:
-            print(f'{hash} has no detections on VirusTotal {positives}/{total}')
+        	count_safe+=1
+        	print(f'{hash} không phát hiện độc hại {positives}/{total}')
     else:
-        print(f'{hash} no results found for on VirusTotal')
-    time.sleep(25)
-
-    # chay den cuoi dang bi loi, nhung khong sao, do la viec danh sach hash da het
+    	count_nope+=1
+    	print(f'{hash} không có kết quả tìm kiếm trên VirusTotal trước đây')
+    time.sleep(25) #Key pro thì bỏ cho nhanh
+print('Số lượng file độc hại:',cout_malware)
+print('Số lượng file an toàn:',count_safe)
+print('Số lượng file chưa phát hiện bởi Virustotal:',count_nope)
+print("DONE!!!!")
