@@ -1,0 +1,20 @@
+MD5 hash of C:\Windows\System32\DeviceProperties.exe:
+430ce68aca39260a79167f02763d157e
+CertUtil: -hashfile command completed successfully.
+MD5 hash of C:\Windows\System32\DFDWiz.exe:
+a6e3cba5d22776f545d290fa7e1c25fa
+CertUtil: -hashfile command completed successfully.
+MD5 hash of C:\Windows\System32\dfrgui.exe:
+87db68334feab8038a7e147296bc56c6
+CertUtil: -hashfile command completed successfully.
+MD5 hash of C:\Windows\System32\dialer.exe:
+d6bb90ef02bedae431eddd5f06cbefe1
+CertUtil: -hashfile command completed successfully.
+MD5 hash of C:\Windows\System32\directxdatabaseupdater.exe:
+685a5cb790ddad84fc279dba451559ae
+CertUtil: -hashfile command completed successfully.
+MD5 hash of C:\Windows\System32\diskpart.exe:
+0676bc64eb3a629d312c12101ee8ef27
+CertUtil: -hashfile command completed successfully.
+MD5 hash of C:\Windows\System32\diskperf.exe:
+e65f4cc956468eac72d56d45310ba7e3
